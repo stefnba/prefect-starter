@@ -1,5 +1,4 @@
 from prefect import flow, task
-from prefect.blocks.system import String
 
 
 @task(name="Print Hello")
@@ -13,9 +12,6 @@ def print_hello(name):
 def print_hello_again(name):
     msg = f"Hello {name}!"
     print(msg)
-
-    string_block = String.load("what")
-    print(string_block.value)
 
     return msg
 
